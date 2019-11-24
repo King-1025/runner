@@ -15,6 +15,6 @@ rm -rf $REPORT
 
 check "date"
 check "ifconfig"
-check "df"
+check "df -h"
 check "whoami"
-check "ping -c 3 google.com"
+#check "ping -c 3 google.com"
