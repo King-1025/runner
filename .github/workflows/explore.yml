@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: 启动勘探
         run: ./explore.sh
       - name: 上传报告
