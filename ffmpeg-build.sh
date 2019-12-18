@@ -40,17 +40,17 @@ git clone https://github.com/mirror/x264.git $X264_DIR -j 4 \
 && \
 cd $X264_DIR \
 && \
-./configure --prefix=/opt/x264_install --enable-static --disable-shared \
+./configure \
 && \
 make -j 4 \
 && \
-make install \
+sudo make install \
 && \
 git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
 && \
 cd $FFMPEG_DIR \
 && \
-./configure --prefix=$INSTALL_DIR --enable-gpl --enable-version3 --enable-static --enable-libx264 --extra-cflags='-I/opt/x264_install/include' --extra-ldflags='-L/opt/x264_install/lib -lx264 -lpthread -lm -ldl' --enable-static --disable-shared --enable-pthreads --enable-encoder=libx264 \
+./configure --prefix=$INSTALL_DIR --enable-gpl --enable-version3 --enable-static --enable-libx264 --extra-ldflags='-lx264 -lpthread -lm -ldl' --enable-static --disable-shared --enable-pthreads --enable-encoder=libx264 --disable-doc --disable-ffplay --disable-ffprobe \
 && \
 make -j 4 \
 && \
