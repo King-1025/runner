@@ -19,6 +19,6 @@ rm -rf $RESULT && mkdir -p $RESULT
 #check "ifconfig"
 #check "df -h"
 #check "whoami"
-check "'sudo apt autoremove"
+check "'sudo apt install yasm -y"
 check "$ROOT/ffmpeg-build.sh"
 #check "ping -c 3 google.com"

@@ -7,9 +7,7 @@ INSTALL_DIR=$ROOT/result/ffmpeg
 mkdir -p $FFMPEG_DIR
 mkdir -p $INSTALL_DIR
 
-wget http://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 \
-&&
-tar -xjvf ffmpeg-snapshot.tar.bz2 \
+git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
 && \
 cd $FFMPEG_DIR \
 && \
