@@ -4,9 +4,12 @@ ROOT=$(pwd)
 FFMPEG_DIR=$ROOT/ffmpeg
 INSTALL_DIR=$ROOT/result/ffmpeg
 
+mkdir -p $FFMPEG_DIR
 mkdir -p $INSTALL_DIR
 
-git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR \
+wget http://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 \
+&&
+tar -xjvf ffmpeg-snapshot.tar.bz2 \
 && \
 cd $FFMPEG_DIR \
 && \
