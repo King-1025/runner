@@ -7,6 +7,8 @@ INSTALL_DIR=$ROOT/result/ffmpeg
 mkdir -p $FFMPEG_DIR
 mkdir -p $INSTALL_DIR
 
+sudo apt-get install build-essential -y \
+&& \
 git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
 && \
 cd $FFMPEG_DIR \
