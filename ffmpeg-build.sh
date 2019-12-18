@@ -50,7 +50,7 @@ git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
 && \
 cd $FFMPEG_DIR \
 && \
-./configure --prefix=$INSTALL_DIR --enable-gpl --enable-version3 --enable-static --enable-libx264 --extra-ldflags='-lx264 -lpthread -lm -ldl' --enable-static --disable-shared --enable-pthreads --enable-encoder=libx264 --disable-doc --disable-ffplay --disable-ffprobe \
+./configure --prefix=$INSTALL_DIR --enable-static --enable-libx264 --enable-pthreads --disable-shared --disable-doc --disable-ffplay \
 && \
 make -j 4 \
 && \
