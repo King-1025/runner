@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-REPORT=$(pwd)/report.txt
+ROOT=$(pwd)
+RESULT=$ROOT/result
+REPORT=$RESULT/report.txt
 
 function check()
 {
@@ -11,10 +13,11 @@ function check()
   echo "" | tee -a $REPORT
 }
 
-rm -rf $REPORT
+rm -rf $RESULT && mkdir -p $RESULT
 
-check "date"
-check "ifconfig"
-check "df -h"
-check "whoami"
+#check "date"
+#check "ifconfig"
+#check "df -h"
+#check "whoami"
+check "$ROOT/ffmpeg-build.sh"
 #check "ping -c 3 google.com"
