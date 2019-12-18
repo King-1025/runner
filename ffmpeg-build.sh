@@ -15,7 +15,22 @@ wget http://www.tortall.net/projects/yasm/releases/$YASM.tar.gz \
 tar -xzf $YASM.tar.gz \
 && \
 cd $YASM \
-&& ./configure \
+&& \
+./configure \
+&& \
+make -j 4 \
+&& \
+sudo make install \
+&& \
+cd $ROOT \
+&& \
+wget https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.gz \
+&& \
+tar -xzf nasm-2.14.02.tar.gz \
+&& \
+cd nasm-2.14.02 \
+&& \
+./configure \
 && \
 make -j 4 \
 && \
