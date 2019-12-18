@@ -6,7 +6,7 @@ INSTALL_DIR=$ROOT/result/ffmpeg
 
 mkdir -p $INSTALL_DIR
 
-git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
+git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR \
 && \
 cd $FFMPEG_DIR \
 && \
