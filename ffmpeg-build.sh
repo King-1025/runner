@@ -3,11 +3,13 @@
 ROOT=$(pwd)
 FFMPEG_DIR=$ROOT/ffmpeg
 INSTALL_DIR=$ROOT/result/ffmpeg
+YASM="yasm-1.3.0"
+
 
 mkdir -p $FFMPEG_DIR
 mkdir -p $INSTALL_DIR
 
-sudo apt-get install build-essential -y \
+wget http://www.tortall.net/projects/yasm/releases/$YASM.tar.gz && tar -xzvf $YASM.tar.gz && cd $YASM && ./configure && make -j 4 && make install \
 && \
 git clone https://git.ffmpeg.org/ffmpeg.git $FFMPEG_DIR -j 4 \
 && \
