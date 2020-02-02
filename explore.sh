@@ -19,5 +19,6 @@ rm -rf $RESULT && mkdir -p $RESULT
 #check "ifconfig"
 #check "df -h"
 #check "whoami"
-check "$ROOT/ffmpeg-build.sh"
+#check "$ROOT/ffmpeg-build.sh"
 #check "ping -c 3 google.com"
+check "$ROOT/xy998.sh"
