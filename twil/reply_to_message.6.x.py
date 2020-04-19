@@ -23,7 +23,7 @@ def is_start():
 
 @app.route("/receive", methods=['GET', 'POST'])
 def receive():
-    status=1
+    status=0
     message=request.values
     ss=json.dumps({"status":str(status), "pid":str(os.getpid()), "message":str(message)})
     with open("./values.json", "w") as f:
@@ -48,6 +48,6 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
-      app.run(debug=False, port=int(sys.argv[1]))
+      app.run(debug=False, host="0.0.0.0", port=int(sys.argv[1]))
     else:
       print("port ?")     
