@@ -24,4 +24,4 @@ rm -rf $RESULT && mkdir -p $RESULT
 #check "$ROOT/xy998.sh"
 #check "$ROOT/gf.sh json"
 #check "echo && echo && echo"
-check "$ROOT/gf.sh"
+check "$ROOT/twil/run.sh"
