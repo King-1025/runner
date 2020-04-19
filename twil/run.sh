@@ -7,8 +7,8 @@ function app()
 
 function setup()
 {
-   apt update -y && apt install libsecret-1-dev -y
-   npm install twilio-cli -g
+   sudo apt update -y && sudo apt install libsecret-1-dev -y
+   sudo npm install twilio-cli -g
    pip install Flask>=0.12
    pip install twilio~=6.0.0
 }
