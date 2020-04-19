@@ -2,8 +2,7 @@
 
 function app()
 {
-  #setup
-  cd ./twil && python3 ./main.py 
+  setup && cd ./twil && python3 ./main.py 
 }
 
 function setup()
