@@ -12,6 +12,7 @@ function setup()
    npm install twilio-cli -g
    pip install Flask>=0.12
    pip install twilio~=6.0.0
+   pip install requests
 }
 
 app $*
