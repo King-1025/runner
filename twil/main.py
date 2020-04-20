@@ -19,16 +19,17 @@ if __name__ == "__main__":
         run_pid=None
         while 1:
          time.sleep(5)
+         if run_pid:
+            continue
          try:
-           r=requests.get("http://0.0.0.0:5000/receive")
-           if r.status_code == 200:
-              print("data: %s\n" % r.text)
            r=requests.get("http://0.0.0.0:5000/isStart")
            if r.status_code == 200:
               data=json.loads(r.text)
               if not run_pid:
-                 proc = subprocess.Popen('which twilio && twilio phone-numbers:update "+15108248999" --sms-url="http://0.0.0.0:5000/receive"', shell=True)
+                 proc = subprocess.Popen('which twilio && echo "ok!" && twilio phone-numbers:update "+15108248999" --sms-url="http://localhost:5000/receive"', shell=True)
                  run_pid = proc.pid
+                 print("server pid: %s" % str(server_pid))
+                 print("run pid: %s" % str(run_pid))
               if data["status"] == "1":
                  print(data["message"])
                  print("server pid: %s" % str(server_pid))

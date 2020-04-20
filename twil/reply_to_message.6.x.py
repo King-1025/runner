@@ -8,7 +8,7 @@ import os
 import logging
 
 
-logging.basicConfig(level=logging.ERROR)
+# logging.basicConfig(level=logging.ERROR)
 
 app = Flask(__name__)
 
@@ -48,6 +48,6 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
-      app.run(debug=False, host="0.0.0.0", port=int(sys.argv[1]))
+      app.run(debug=True, host="0.0.0.0", port=int(sys.argv[1]))
     else:
       print("port ?")     
