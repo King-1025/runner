@@ -29,8 +29,34 @@ function do_task()
         "null"|"---") break;;
         "") continue;;
 	*)
-            local command="check $ss"
-            eval $command
+	    echo $ss | grep -q "@APK.*"
+	    if [ $? -eq 0 ]; then
+#	       set -x
+  	       declare -a args=($ss)
+	       local argc=${#args[@]}
+   	       if [ $argc -gt 1 ]; then
+	          local subdir=""
+	          local name="apk_repo"
+	          local url="${args[1]}"
+ 	          if [ "${args[2]}" != "" ]; then
+                     sudir="${args[2]}"
+	          fi
+ 	          if [ "${args[3]}" != "" ]; then
+                     name="${args[3]}"
+	          fi
+#cat << EOF
+                  git clone "$url" "$ROOT/$name" -j 4 \
+                  && \
+	          android_build "$ROOT/${name}/${subdir}"
+#EOF
+	       else
+		  echo "Usage: @APK <url> [name] [subdir]"
+		  exit 1
+	       fi
+            else
+               local command="check $ss"
+               eval $command
+	    fi
 	;;
       esac
       ((i++))

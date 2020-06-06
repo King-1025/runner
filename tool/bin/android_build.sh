@@ -12,6 +12,7 @@ cd $ROOT
 echo "ROOT: $ROOT"
 ls -lha $ROOT
 
+APP_PREFIX=$(basename $ROOT)
 RELEASE=./app/build/outputs/apk
 OUTPUT=./output
 KS=$ANDROID_KS
@@ -24,9 +25,15 @@ sudo apt install apksigner -y
 
 rm -rf $OUTPUT && mkdir $OUTPUT
 
+if [ "${APP_PREFIX}" != "" ] && [ "${APP_PREFIX}" != "." ]; then
+   APP_PREFIX="${APP_PREFIX}-"
+else
+   APP_PREFIX=""
+fi
+
 for i in $(find $RELEASE -name *.apk -print); do
    in=$i
-   out="$OUTPUT/$(echo $(basename $i) | sed "s/un//g")"
+   out="$OUTPUT/${APP_PREFIX}$(echo $(basename $i) | sed "s/un//g")"
    echo sign $in...
    apksigner sign -v --ks $KS --in $in --out $out --ks-pass file:$KSP
    if [ $? -eq 0 ]; then
