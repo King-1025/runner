@@ -3,7 +3,8 @@ name: 执行环境勘探
 on: [push]
 
 jobs:
-  build:
+  explore:
+    name: 任务勘测
 
     runs-on: ubuntu-latest
 
