@@ -7,18 +7,20 @@ fi
 
 ROOT="$1"
 
+cd $ROOT
+
 echo "ROOT: $ROOT"
 ls -lha $ROOT
 
-RELEASE=$ROOT/app/build/outputs/apk
-OUTPUT=$ROOT/output
+RELEASE=./app/build/outputs/apk
+OUTPUT=./output
 KS=$ANDROID_KS
 KSP=$ANDROID_KSP
 
 pip install requests
 sudo apt install apksigner -y
 
-$ROOT/gradlew :app:build
+./gradlew :app:build
 
 rm -rf $OUTPUT && mkdir $OUTPUT
 
