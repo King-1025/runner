@@ -1,0 +1,21 @@
+{
+	"env":{
+		"java":"true",
+		"node":"false",
+		"python":"true"
+	},
+	"task":[
+	      "$ROOT/script/android-tv.sh",
+	      "---",
+              "echo && echo && echo",
+              "date",
+              "ifconfig",
+              "df -h",
+              "whoami",
+              "$ROOT/ffmpeg-build.sh",
+              "ping -c 3 google.com",
+              "$ROOT/xy998.sh",
+              "$ROOT/gf.sh json",
+              "$ROOT/twil/run.sh"
+	]
+}
