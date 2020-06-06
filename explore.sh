@@ -39,7 +39,7 @@ function do_task()
 	          local name="apk_repo"
 	          local url="${args[1]}"
  	          if [ "${args[2]}" != "" ]; then
-                     sudir="${args[2]}"
+                     subdir="${args[2]}"
 	          fi
  	          if [ "${args[3]}" != "" ]; then
                      name="${args[3]}"

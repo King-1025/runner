@@ -5,10 +5,10 @@
 		"python":"true"
 	},
 	"task":[
+              "@APK https://github.com/android/tv-samples.git ./Leanback",
+	      "---",
 	      "$ROOT/script/android-tv.sh",
   	      "---",
-	      "@APK https://github.com/android/tv-samples.git ./LeanbackShowcase",
-	      "---",
               "echo && echo && echo",
               "date",
               "ifconfig",
