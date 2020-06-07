@@ -38,6 +38,7 @@ for i in $(find $RELEASE -name *.apk -print); do
    apksigner sign -v --ks $KS --in $in --out $out --ks-pass file:$KSP
    if [ $? -eq 0 ]; then
       echo "save as $out"
+      cp $out $RESULT
    fi
    echo ""
 done

@@ -71,6 +71,7 @@ function prepare()
    add_github_path $ROOT/tool/bin
    set_github_env ANDROID_KS  $KS
    set_github_env ANDROID_KSP $KSP
+   set_github_env RESULT $RESULT
 }
 
 function check()
