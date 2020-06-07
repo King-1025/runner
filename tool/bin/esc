@@ -10,7 +10,7 @@ import requests
 class Escience:
     def __init__(self, name, password,
                  zone="king1025",
-                 parentRid="11015861"): #代表目录名: video
+                 parentRid="11335749"): #代表目录名: video
         self.name = name
         self.password = password
         self.session = requests.Session()
