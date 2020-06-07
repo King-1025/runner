@@ -14,7 +14,7 @@ sed -i "s/LAUNCHER/#/g"          $path
 sed -i "s/LEANBACK_#/LAUNCHER/g" $path 
 sed -i "s/#/LEANBACK_LAUNCHER/g" $path
 
-sed -i "s/21/17/g" "$subdir/$buildf"
+#sed -i "s/21/17/g" "$subdir/$buildf"
 sed -i "s/28/21/g" "$subdir/$buildf"
 
 android_build $subdir
@@ -25,7 +25,7 @@ path=$(find $subdir -name "Android*" -print)
 
 sed -i "s/LEANBACK_//g" $path
 
-sed -i "s/21/17/g" "$subdir/$buildf"
+#sed -i "s/21/17/g" "$subdir/$buildf"
 sed -i "s/28/21/g" "$subdir/$buildf"
 
 android_build $subdir
