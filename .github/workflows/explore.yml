@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: 准备勘探
-        run: explore.cmd prepare
+        run: .\explore.cmd prepare
 
       - name: 配置 JDK
         if: env.ENABLE_JAVA_ENV == 'true'
@@ -33,7 +33,7 @@ jobs:
           python-version: '3.x'
 
       - name: 启动勘探
-        run: explore.cmd do_task
+        run: .\explore.cmd do_task
         env:
             TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
             TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
