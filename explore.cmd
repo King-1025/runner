@@ -24,6 +24,7 @@ call:set_github_env ANDROID_KS "%KS%"
 call:set_github_env ANDROID_KSP "%KSP%"
 call:set_github_env RESULT "%RESULT%"
 call:add_github_path "%ROOT%\tool\bin"
+md %RESULT%
 goto:eof
 
 rem 勘测执行函数
@@ -35,7 +36,7 @@ goto:eof
 rem 检测命令
 :check
 set "command=%~1"
-set "line========================================================"
+set "line=^======================================================="
 call:tee %command% %REPORT%
 call:tee %line% %REPORT%
 %command%
@@ -51,12 +52,12 @@ goto:eof
 
 rem 设置github环境变量
 :set_github_env
-echo "::set-env name=%~1::%~2"
+echo ::set-env name=%~1::%~2
 goto:eof
 
 rem 添加github path环境变量
 :add_github_path
-echo "::add-path::%~1"
+echo ::add-path::%~1
 goto:eof
 
 call:app %*
