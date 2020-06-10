@@ -38,16 +38,16 @@ rem 检测命令
 set "command=%~1"
 set "line=^======================================================="
 call:tee %command% %REPORT%
-call:tee %line% %REPORT%
+rem call:tee %line% %REPORT%
 %command%
-call:tee %line% %REPORT%
+rem call:tee %line% %REPORT%
 call:tee "" %REPORT%
 goto:eof
 
 rem 简略tee命令实现
 :tee
 echo %~1
-echo %~1 >> %2
+echo %~1 >> %~2
 goto:eof
 
 rem 设置github环境变量
