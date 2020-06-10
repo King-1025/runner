@@ -1,6 +1,6 @@
 {
 	"env":{
-		"java":"true",
+		"java":"false",
 		"node":"false",
 		"python":"true"
 	},
