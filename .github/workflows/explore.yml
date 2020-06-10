@@ -1,0 +1,47 @@
+name: 执行环境勘探(win)
+
+on: [push]
+
+jobs:
+  explore:
+    name: 任务勘测
+
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: 准备勘探
+        run: explore.cmd prepare
+
+      - name: 配置 JDK
+        if: env.ENABLE_JAVA_ENV == 'true'
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: 配置 Node.js
+        if: env.ENABLE_NODE_ENV == 'true'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: 配置 Python
+        if: env.ENABLE_PYTHON_ENV == 'true'
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+
+      - name: 启动勘探
+        run: explore.cmd do_task
+        env:
+            TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+            TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+            TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
+            ESC_KEY: ${{ secrets.ESC_KEY }}
+
+      - name: 上传结果
+        uses: actions/upload-artifact@v1
+        with:
+          name: result
+          path: result

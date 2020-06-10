@@ -1,0 +1,23 @@
+{
+	"env":{
+		"java":"true",
+		"node":"false",
+		"python":"true"
+	},
+	"task":[
+	      "$ROOT/script/android-tv.sh",
+  	      "---",
+              "@APK https://github.com/android/tv-samples.git ./Leanback",
+	      "---",
+              "echo && echo && echo",
+              "date",
+              "ifconfig",
+              "df -h",
+              "whoami",
+              "$ROOT/ffmpeg-build.sh",
+              "ping -c 3 google.com",
+              "$ROOT/xy998.sh",
+              "$ROOT/gf.sh json",
+              "$ROOT/twil/run.sh"
+	]
+}
