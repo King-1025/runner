@@ -7,6 +7,7 @@ set "RESULT=%ROOT%\result"
 set "KS=%ROOT%\extra\debug.jks"
 set "KSP=%ROOT%\extra\debug_ks_pass"
 set "REPORT=%RESULT%\report.txt"
+set "MTEMP=%TEMP%\.explore"
 
 rem app全局执行函数
 :app
@@ -39,7 +40,7 @@ set "command=%~1"
 call:strtee "%command%" "%REPORT%"
 call:strtee "=======================================================" "%REPORT%"
 
-%command% > .tmp && type .tmp >> %REPORT% && del .tmp
+%command% > %MTEMP% && type %MTEMP% && type %MTEMP% >> %REPORT% && del %MTEMP%
 
 call:strtee "=======================================================" "%REPORT%"
 call:strtee "." "%REPORT%"
