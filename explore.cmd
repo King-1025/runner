@@ -33,6 +33,7 @@ rem 勘测执行函数
 echo 执行...
 rem call:check "ipconfig"
 call:check ".\script\fitx修复安装.cmd"
+call:check ".\script\fitx修复安装-step2.cmd"
 goto:eof
 
 rem 检测命令
