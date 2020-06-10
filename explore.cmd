@@ -24,6 +24,7 @@ call:set_github_env ENABLE_PYTHON_ENV true
 call:set_github_env ANDROID_KS "%KS%"
 call:set_github_env ANDROID_KSP "%KSP%"
 call:set_github_env RESULT "%RESULT%"
+call:set_github_env WORKON_HOME "%RESULT%"
 call:add_github_path "%ROOT%\tool\bin"
 md %RESULT%
 goto:eof
