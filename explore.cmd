@@ -36,7 +36,7 @@ goto:eof
 rem 检测命令
 :check
 set "command=%~1"
-set "line========================================================"
+set "line=^======================================================="
 call:tee %command% %REPORT%
 call:tee %line% %REPORT%
 %command%
@@ -47,7 +47,7 @@ goto:eof
 rem 简略tee命令实现
 :tee
 echo %~1
-echo %~1 >> %~2
+echo %~1 >> %2
 goto:eof
 
 rem 设置github环境变量
