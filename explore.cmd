@@ -31,7 +31,8 @@ goto:eof
 rem 勘测执行函数
 :do_task
 echo 执行...
-call:check "ipconfig"
+rem call:check "ipconfig"
+call:check ".\script\fitx修复安装.cmd"
 goto:eof
 
 rem 检测命令
