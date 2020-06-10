@@ -36,16 +36,17 @@ goto:eof
 rem 检测命令
 :check
 set "command=%~1"
-set "line=^======================================================="
-call:tee %command% %REPORT%
-rem call:tee %line% %REPORT%
-%command%
-rem call:tee %line% %REPORT%
-call:tee "" %REPORT%
+call:strtee "%command%" "%REPORT%"
+call:strtee "=======================================================" "%REPORT%"
+
+%command% > .tmp && type .tmp >> %REPORT% && del .tmp
+
+call:strtee "=======================================================" "%REPORT%"
+call:strtee "." "%REPORT%"
 goto:eof
 
 rem 简略tee命令实现
-:tee
+:strtee
 echo %~1
 echo %~1 >> %~2
 goto:eof
