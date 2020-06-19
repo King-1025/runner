@@ -5,6 +5,8 @@
 		"python":"true"
 	},
 	"task":[
+	      "@APK https://github.com/King-1025/RoboKing",
+  	      "---",
 	      "$ROOT/script/android-tv.sh",
   	      "---",
               "@APK https://github.com/android/tv-samples.git ./Leanback",
