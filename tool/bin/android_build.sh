@@ -21,7 +21,7 @@ KSP=$ANDROID_KSP
 pip install requests
 sudo apt install apksigner -y
 
-bash ./gradlew :app:build
+bash ./gradlew build
 
 rm -rf $OUTPUT && mkdir $OUTPUT
 

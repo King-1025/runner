@@ -5,7 +5,7 @@
 		"python":"true"
 	},
 	"task":[
-	      "@APK https://code.videolan.org/videolan/libvlc-android-samples.git ./java_sample",
+	      "@APK https://code.videolan.org/videolan/libvlc-android-samples.git",
 	      "---",
 	      "$ROOT/script/ssr.sh",
 	      "---",
