@@ -13,7 +13,7 @@ echo "ROOT: $ROOT"
 ls -lha $ROOT
 
 APP_PREFIX=$(basename $ROOT)
-RELEASE=./app/build/outputs/apk
+RELEASE=.
 OUTPUT=./output
 KS=$ANDROID_KS
 KSP=$ANDROID_KSP
@@ -21,7 +21,7 @@ KSP=$ANDROID_KSP
 pip install requests
 sudo apt install apksigner -y
 
-bash ./gradlew build
+bash ./gradlew :java_sample:build
 
 rm -rf $OUTPUT && mkdir $OUTPUT
 
